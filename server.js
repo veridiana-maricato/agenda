@@ -48,7 +48,7 @@ app.use(csrfMiddleware);
 app.use(routes);
 
 app.on('mongooseReady', () => {
-  app.listen(8000, () => {
+  app.listen(port, () => {
     console.log(`Servidor executando na porta ${port}. Acessar http://localhost:${port}/`);
   });
 });
