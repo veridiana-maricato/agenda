@@ -1,0 +1,49 @@
+<%- include('includes/nav') %>
+  <%- include('includes/head') %>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-2">
+
+        </div>
+        <div class="col-lg-8 my-3">
+          <h1 class="text-center">Contatinhos</h1>
+          <p class="text-center lead">Crie ou edite seus contatinhos</p>
+
+          <%- include('includes/messages') %>
+
+          <% if(contact._id) { %>
+            <form action="/contact/edit/<%= contact._id %>" method="POST">
+              <% } else { %>
+                <form action="/contact/register" method="POST">
+                <% } %>
+              <input type="hidden" name="_csrf" value=<%=csrfToken %>>
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input value="<%= contact.name %>" name="name" type="text" class="form-control" id="name" placeholder="If you remember">
+              </div>
+              <div class="form-group">
+                <label for="name">Last name</label>
+                <input value="<%= contact.lastName %>" name="lastName" type="text" class="form-control" id="lastName" placeholder="Like you know it">
+              </div>
+              <div class="form-group">
+                <label for="name">Number</label>
+                <input value="<%= contact.number %>" name="number" type="text" class="form-control" id="number" placeholder="At least this one you have to know">
+              </div>
+              <div class="form-group">
+                <label for="email">E-mail</label>
+                <input value="<%= contact.email %>" name="email" type="email" class="form-control" id="email" placeholder="Why on earth would you need this">
+              </div>           
+              <button type="submit" class="btn btn-primary">Save</button>
+            </form>
+
+          
+
+
+
+          
+
+        </div>
+        <div class="col-lg-2"></div>
+      </div>
+    </div>
+    <%- include('includes/footer') %>

@@ -9,19 +9,20 @@
           <h1 class="text-center">Agenda</h1>
           <p class="text-center lead">Contatinhos</p>
 
-          <div class="row">
-            <div class="col my-3">
-              <div class="alert alert-danger">Um erro ocorreu</div>
-            </div>
-          </div>
+          <%- include('includes/messages') %>
+
           <div class="responsive-table">
             <table class="table my-3">
-              <tr>
-                <td>Veridiana</td>
-                <td>Maricato</td>
-                <td>993285536</td>
-                <td>maricato.veridiana@gmail.com</td>
-              </tr>
+              <% contacts.forEach(contact => { %>
+                <tr>
+                  <td><%= contact.name %></td>
+                  <td><%= contact.lastName %></td>
+                  <td><%= contact.number %></td>
+                  <td><%= contact.email %></td>
+                  <td><a href="/contact/index/<%= contact._id %>">Edit</a></td>
+                  <td><a class="text-danger" href="/contact/delete/<%= contact._id %>">Delete</a></td>
+                </tr>
+                <% }) %>             
             </table>
           </div>
         </div>
