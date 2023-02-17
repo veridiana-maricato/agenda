@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-// mongoose.set('useFindAndModify', false);
 const validator = require('validator')
 
 

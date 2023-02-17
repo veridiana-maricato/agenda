@@ -21,7 +21,7 @@ exports.register = async function (req, res) {
         req.flash('success', 'User created!')
         req.session.user = login.user
         req.session.save(function () {
-            return res.redirect('/login/index')
+            return res.redirect('/')
         })
 
     } catch (e) {
@@ -56,7 +56,7 @@ exports.login = async function (req, res) {
         // remember that login.user is equal to the user found on database (composed by email and hash)
         req.session.user = login.user
         req.session.save(function () {
-            return res.redirect('/login/index')
+            return res.redirect('/')
         })
         
     } catch (e) {

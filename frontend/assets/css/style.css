@@ -1,0 +1,17 @@
+
+
+.agenda-titles{
+    font-weight: bold;
+    color: #ff006e;
+}
+
+.pink-nav, .pink-link{
+    background-color: #ff006e;
+    color: white;
+}
+
+.pink-btn{
+    background-color: #ff006e;
+    margin: 0 auto;
+
+}

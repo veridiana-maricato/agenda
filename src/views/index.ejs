@@ -1,18 +1,23 @@
+<%- include('includes/head') %>
 <%- include('includes/nav') %>
-  <%- include('includes/head') %>
     <div class="container">
       <div class="row">
         <div class="col-lg-2">
 
         </div>
         <div class="col-lg-8 my-3">
-          <h1 class="text-center">Agenda</h1>
-          <p class="text-center lead">Contatinhos</p>
+          <h1 class="text-center">Personal agenda</h1>
+          <p class="text-center lead">Emphasis on the personal</p>
 
           <%- include('includes/messages') %>
+          <% if(contacts.length > 0){ %>
 
           <div class="responsive-table">
             <table class="table my-3">
+              <td class="agenda-titles">Name</td>
+              <td class="agenda-titles">Last name</td>
+              <td class="agenda-titles">Phone number</td>
+              <td class="agenda-titles">Email</td>
               <% contacts.forEach(contact => { %>
                 <tr>
                   <td><%= contact.name %></td>
@@ -25,6 +30,9 @@
                 <% }) %>             
             </table>
           </div>
+          <% }else{ %>
+            <p class="text-center lead">Jesus, there's nobody here... Please download tinder or something.</p>
+          <% } %>
         </div>
         <div class="col-lg-2"></div>
       </div>
